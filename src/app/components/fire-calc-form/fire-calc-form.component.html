@@ -4,9 +4,27 @@
             <form class="calc-form">
                 <mat-form-field class="input-full-width">
                     <mat-label>Expected yearly expenses</mat-label>
-                    <input matInput placeholder="Ex. 35000" value=35000>
+                    <input matInput placeholder="Ex. 35000">
                 </mat-form-field>
             </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <mat-label style="padding-right: 15px;">Desired withdrawal rate</mat-label>
+            <mat-slider
+                class="example-margin"
+                [disabled]="disabled"
+                [invert]="invert"
+                [max]="max"
+                [min]="min"
+                [step]="step"
+                [thumbLabel]="thumbLabel"
+                [tickInterval]="getSliderTickInterval()"
+                [(ngModel)]="value"
+                [vertical]="vertical">
+            </mat-slider>
+            <input [(ngModel)]="value" type="text" style="width: 75px;">
         </div>
     </div>
 </div>
